@@ -34,15 +34,9 @@
       },
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/nav/论坛.png",
-        "selectedIconPath": "images/nav/论坛-on.png",
-        "text": "论坛"
-      },
-      {
-        "pagePath": "pages/index/index",
         "iconPath": "images/nav/会员.png",
         "selectedIconPath": "images/nav/会员-on.png",
-        "text": "我的"
+        "text": "我"
       }
     ]
   },
