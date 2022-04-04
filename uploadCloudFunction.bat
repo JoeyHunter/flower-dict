@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Tencent\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-7g3fgscf0e7f9b9f --n quickstartFunctions --r --project "D:\Zfiles\Coder\RepoWechat\iFlower" --report_start --report

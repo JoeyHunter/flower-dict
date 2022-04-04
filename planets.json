@@ -1,0 +1,39 @@
+{
+  "name": "雏菊",
+  "sname": "Bellis perennis",
+  "family": "菊科",
+  "genus": "雏菊属",
+  "period": "3-5月",
+  "descriptions": "多年生或一年生小草本，原产欧洲，现在我国各地庭园栽培为花坛观赏植物",
+  "flower_language": "天真，和平"
+}
+
+{
+  "name": "沙漠玫瑰",
+  "sname": "Adenium obesum",
+  "family": "夹竹桃科",
+  "genus": "沙漠玫瑰属",
+  "period": "5-12月",
+  "descriptions": "花形似小喇叭，因原产地接近沙漠且红如玫瑰而得名",
+  "flower_language": "热烈，旺盛的生命"
+}
+
+{
+  "name": "栀子花",
+  "sname": "Gardenia jasminoides Ellis",
+  "family": "茜草科",
+  "genus": "栀子属",
+  "period": "5-7月",
+  "descriptions": "灌木，花、叶、果皆美，花芳香四溢，分布于东半球的热带和亚热带地区",
+  "flower_language": "单纯，美好，喜悦"
+}
+
+{
+  "name": "郁金香",
+  "sname": "Tulipa gesneriana L.",
+  "family": "百合科",
+  "genus": "郁金香属",
+  "period": "4-5月",
+  "descriptions": "多年生草本，单朵顶生，大而艳丽，分布于亚洲、欧洲及北非，以地中海至中亚地区为最丰富",
+  "flower_language": "高贵，气质"
+}
