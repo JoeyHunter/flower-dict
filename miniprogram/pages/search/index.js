@@ -9,8 +9,8 @@ Page({
       showRecord: false
     }],
   },
-  onLoad: function (options) {
-    console.log('!!!');
+  onLoad(options) {
+    console.log('加载 Search 页面...');
     if (!this.data.haveGetRecord){
       this.getRecord();
     }
@@ -28,8 +28,9 @@ Page({
     }
   },
   jumpPage(e) {
+    // console.log(e);
     wx.navigateTo({
-      url: `/pages/${e.currentTarget.dataset.page}/index?envId=${e.currentTarget.dataset.id}`,
+      url: `/pages/${e.currentTarget.dataset.page}/index?id=${e.currentTarget.dataset.id}`,
     });
   },
   getRecord() {

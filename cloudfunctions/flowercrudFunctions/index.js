@@ -3,6 +3,7 @@ const cloud = require('wx-server-sdk')
 
 const getCollection = require('./getCollection/index')
 const getOpenId = require('./getOpenId/index')
+const getDetail = require('./getDetail/index')
 
 cloud.init()
 
@@ -13,5 +14,7 @@ exports.main = async (event, context) => {
             return await getOpenId.main(event, context);
         case 'getCollection':
             return await getCollection.main(event, context);
+        case 'getDetail':
+            return await getDetail.main(event, context);
     }
 }

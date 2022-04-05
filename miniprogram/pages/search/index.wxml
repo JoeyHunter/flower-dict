@@ -1,4 +1,5 @@
 <view class="contianer">
+  <p>search page</p>
   <view wx:if="{{!record}}">尚未取得数据</view>
   <view wx:if="{{showRecord}}">
     <view wx:key="title" wx:for="{{record}}" wx:for-item="item">

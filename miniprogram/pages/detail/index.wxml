@@ -1,0 +1,16 @@
+<view class="contianer">
+  <p class="hiden">detail page</p>
+  <p class="hiden">{{id}}</p>
+  <view class="box_text" wx:if="{{!record}}">花卉数据将展示在这里</view>
+  <view wx:if="{{record}}" class="code_box">
+  <view class="title">{{record.name}}</view>
+  <view>{{record.sname}}</view>  
+  <view>{{record.family}}</view>  
+  <view>{{record.genus}}</view>  
+  <view>{{record.period}}</view>  
+  <view>{{record.descriptions}}</view>  
+  <view>{{record.flower_language}}</view>  
+  </view>
+  <view class="button" bindtap="getDetail" wx:if="{{!haveGetRecord}}">查询记录</view>
+  <view class="button_clear" bindtap="clearRecord" wx:if="{{haveGetRecord}}">清空</view>
+</view>
