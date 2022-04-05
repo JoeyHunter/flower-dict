@@ -1,14 +1,13 @@
 <view class="contianer">
   <p class="hiden">search page</p>
-  
+  <mp-searchbar></mp-searchbar>
   <view wx:if="{{!record}}">尚未取得数据</view>
-  <view wx:if="{{showRecord}}">
-    <view wx:key="title" wx:for="{{record}}" wx:for-item="item">
-      <view class="line"></view>
-      <view class="power_item" bindtap="jumpPage" data-page="detail" data-id="{{item._id}}">
-        <view class="power_item_title">{{item.name}}</view>
-        <image class="power_item_icon" src="../../images/arrow.svg"></image>
-      </view>
+  <mp-cells>
+    <view wx:if="{{showRecord}}" wx:for="{{record}}" wx:for-item="item" wx:key="{{item._id}}">
+      <mp-cell link="true">
+        <view>{{item.name}}</view>
+        <view slot="footer">{{item.family}}</view>
+      </mp-cell>
     </view>
-  </view>
+  </mp-cells>
 </view>
