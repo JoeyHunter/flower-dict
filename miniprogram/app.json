@@ -11,7 +11,8 @@
     "pages/updateRecordResult/index",
     "pages/updateRecordSuccess/index",
     "pages/sumRecord/index",
-    "pages/sumRecordResult/index"
+    "pages/sumRecordResult/index",
+    "pages/search/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -31,6 +32,12 @@
         "iconPath": "images/nav/首页.png",
         "selectedIconPath": "images/nav/首页-on.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/search/index",
+        "iconPath": "images/nav/论坛.png",
+        "selectedIconPath": "images/nav/论坛-on.png",
+        "text": "论坛"
       },
       {
         "pagePath": "pages/selectRecord/index",

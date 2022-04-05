@@ -1,0 +1,149 @@
+{
+  "name": "荷花",
+  "sname": "Tulipa gesneriana L.",
+  "family": "百合科",
+  "genus": "郁金香属",
+  "period": "4-5月",
+  "descriptions": "多年生草本，单朵顶生，大而艳丽，分布于亚洲、欧洲及北非，以地中海至中亚地区为最丰富",
+  "flower_language": "高贵，气质"
+}
+
+{
+  "name": "梅",
+  "sname": "Armeniaca mume Sieb.",
+  "family": "蔷薇科",
+  "genus": "杏属",
+  "period": "2-3月",
+  "descriptions": "梅是小乔木，稀灌木，高4-10米；树皮浅灰色或带绿色，平滑；小枝绿色，光滑无毛。叶柄长1-2厘米，幼时具毛，老时脱落，常有腺体",
+  "flower_language": "坚强、高雅和忠贞"
+}
+
+{
+  "name": "樱花",
+  "sname": "Prunus subg. Cerasus  sp.",
+  "family": "蔷薇科",
+  "genus": "李属",
+  "period": "2-3月",
+  "descriptions": "花序伞形总状，总梗极短，有花3-4朵，先叶开放，花直径3-3.5厘米；总苞片褐色，椭圆卵形，长6-7毫米，宽4-5毫米，两面被疏柔毛",
+  "flower_language": "爱情与希望，质朴纯洁的爱情"
+}
+
+{
+  "name": "杜鹃",
+  "sname": "Rhododendron simsii Planch.",
+  "family": "杜鹃花科",
+  "genus": "杜鹃属",
+  "period": "4-5月",
+  "descriptions": "分枝多而纤细，密被亮棕褐色扁平糙伏毛。叶革质，常集生枝端，卵形、椭圆状卵形或倒卵形或倒卵形至倒披针形",
+  "flower_language": "高贵，气质"
+}
+
+{
+  "name": "月季花",
+  "sname": "Rosa chinensis Jacq.",
+  "family": "蔷薇科",
+  "genus": "蔷薇属",
+  "period": "5-11月",
+  "descriptions": "月季花是直立灌木，高1-2米；小枝粗壮，圆柱形，近无毛，有短粗的钩状皮刺。两面近无毛，上面暗绿色，常带光泽",
+  "flower_language": "纯洁、希望、永恒"
+}
+
+{
+  "name": "茉莉花",
+  "sname": "Jasminum sambac (L.) Aiton",
+  "family": "木犀科",
+  "genus": "素馨属",
+  "period": "5-8月",
+  "descriptions": "直立或攀援灌木，高达3米。小枝圆柱形或稍压扁状，有时中空，疏被柔毛,基部有时微心形，除下面脉腋间常具簇毛外，其余无毛",
+  "flower_language": "忠贞,贞洁"
+}
+
+{
+  "name": "红花羊蹄甲",
+  "sname": "Bauhinia × blakeana Dunn.",
+  "family": "豆科",
+  "genus": "羊蹄甲属",
+  "period": "全年，3-4月为盛花期",
+  "descriptions": "红花羊蹄甲是乔木；分枝多，小枝细长，被毛。叶革质，近圆形或阔心形，裂片顶钝或狭圆，上面无毛，下面疏被短柔毛",
+  "flower_language": "和睦、兄弟情谊、家族兴旺"
+}
+
+{
+  "name": "海棠",
+  "sname": "Malus spectabilis.",
+  "family": "蔷薇科",
+  "genus": "苹果属",
+  "period": "4-5月",
+  "descriptions": "枝粗壮，圆柱形，幼时具短柔毛，逐渐脱落，老时红褐色或紫褐色，无毛；冬芽卵形，先端渐尖，微被柔毛，紫褐色，有数枚外露鳞片",
+  "flower_language": "苦恋、温暖"
+}
+
+{
+  "name": "山茶",
+  "sname": "Camellia japonica  L.",
+  "family": "山茶科",
+  "genus": "山茶属",
+  "period": "1-4月",
+  "descriptions": "基部阔楔形，上面深绿色，干后发亮，无毛，下面浅绿色，无毛，侧脉7-8对，在上下两面均能见，边缘有细锯齿",
+  "flower_language": "理想的爱、谦虚谦让、可爱美丽"
+}
+
+{
+  "name": "紫罗兰",
+  "sname": "hoary stock.",
+  "family": "十字花科",
+  "genus": "紫罗兰属",
+  "period": "4-5月",
+  "descriptions": "-年生或多年生草本，高达60厘米，全株密被灰白色具柄的分枝柔毛。茎直立，多分枝，基部稍木质化",
+  "flower_language": "追逐幸福、永不背叛"
+}
+
+{
+  "name": "康乃馨",
+  "sname": "Dianthus 'Carnation'.",
+  "family": "石竹科",
+  "genus": "石竹属",
+  "period": "4-9月",
+  "descriptions": "-多年生草本植物，根有时木质化。常苍白色，脉平行，边缘粗糙，基部微合生",
+  "flower_language": "祝福、感激"
+}
+
+{
+  "name": "百合",
+  "sname": "Lilium brownii var. viridulum Baker.",
+  "family": "百合科",
+  "genus": "百合属",
+  "period": "4-7月",
+  "descriptions": "鳞茎球形，直径2-4.5厘米；鳞片披针形，有的有紫色条纹，有的下部有小乳头状突起",
+  "flower_language": "美好家庭、深深祝福"
+}
+
+{
+  "name": "玫瑰",
+  "sname": "TRosa ssp.",
+  "family": "蔷薇科",
+  "genus": "蔷薇属",
+  "period": "5-6月",
+  "descriptions": "该类植物是直立、蔓延或攀援灌木，多数被有皮刺、针刺或刺毛。叶互生，奇数羽状复叶，雄蕊多数分为数轮，着生在花盘周围",
+  "flower_language": "炙热的爱情"
+}
+
+{
+  "name": "兰花",
+  "sname": "Cymbidium ssp.",
+  "family": "兰科",
+  "genus": "兰属",
+  "period": "1-2月",
+  "descriptions": "附生或地生草本，罕有腐生，通常具假鳞茎；假鳞茎卵球形、椭圆形或梭形，较少不存在或延长成茎状，通常包藏于叶基部的鞘之内",
+  "flower_language": "淡泊名利、清新脱俗"
+}
+
+{
+  "name": "天竺葵",
+  "sname": "Pelargonium hortorum Bailey.",
+  "family": "牻牛儿苗科",
+  "genus": "天竺葵属",
+  "period": "5-6月",
+  "descriptions": "茎直立，基部木质化，上部肉质，多 具明显的节，密被短柔毛，具浓烈鱼腥味叶互生；托叶宽三角形或卵形",
+  "flower_language": "思念、陪伴"
+}

@@ -1,0 +1,12 @@
+<view class="contianer">
+  <view wx:if="{{!record}}">尚未取得数据</view>
+  <view wx:if="{{showRecord}}">
+    <view wx:key="title" wx:for="{{record}}" wx:for-item="item">
+      <view class="line"></view>
+      <view class="power_item" bindtap="jumpPage" data-page="detail" data-id="{{item._id}}">
+        <view class="power_item_title">{{item.name}}</view>
+        <image class="power_item_icon" src="../../images/arrow.svg"></image>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,24 +1,4 @@
 <!-- index.wxml -->
-<view class="contianer hiden">
-  <view class="box_text" wx:if="{{!record}}">花卉数据将展示在这里</view>
-  <view wx:if="{{record}}" class="code_box">
-    <view class="code_box_title">花卉数据库</view>
-    <view class="code_box_record">
-      <view class="code_box_record_title">科名</view>
-      <view class="code_box_record_title">属名</view>
-      <view class="code_box_record_title">花语</view>
-    </view>
-    <view class="line"></view>
-    <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
-      <view class="code_box_record_detail">{{item.family}}</view>
-      <view class="code_box_record_detail">{{item.genus}}</view>
-      <view class="code_box_record_detail">{{item.flower_language}}</view>
-    </view>
-  </view>
-  <view class="button" bindtap="getRecord" wx:if="{{!haveGetRecord}}">查询记录</view>
-  <view class="button_clear" bindtap="clearRecord" wx:if="{{haveGetRecord}}">清空</view>
-</view>
-
 <!-- 默认内容 -->
 <view class="container">
   <view class="title">快速了解云开发{{msg[0].title}}</view>
