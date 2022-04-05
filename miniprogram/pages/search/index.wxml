@@ -1,9 +1,16 @@
 <view class="contianer">
   <p class="hiden">search page</p>
-  <mp-searchbar></mp-searchbar>
+  <view class="nav-area">
+    <mp-searchbar ext-class="searchbar"></mp-searchbar>
+    <view class="flex-wrp">
+      <view class="flex-item"><a>蔷薇科</a></view>
+      <view class="flex-item">百合科</view>
+      <view class="flex-item">其它</view>
+    </view>
+  </view>
   <view wx:if="{{!record}}">尚未取得数据</view>
   <mp-cells>
-    <view wx:if="{{showRecord}}" wx:for="{{record}}" wx:for-item="item" wx:key="{{item._id}}">
+    <view wx:if="{{showRecord}}" wx:for="{{record}}" wx:for-item="item" wx:key="_id">
       <mp-cell link="true">
         <view>{{item.name}}</view>
         <view slot="footer">{{item.family}}</view>
