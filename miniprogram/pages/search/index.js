@@ -34,6 +34,9 @@ Page({
     });
   },
   getRecord() {
+    wx.showLoading({
+      title:'Loading...'
+    });
     wx.cloud.callFunction({
       name: 'flowercrudFunctions',
       data: {
@@ -44,8 +47,10 @@ Page({
         haveGetRecord: true,
         record: resp.result.data
       });
+      wx.hideLoading();
     }).catch((e) => {
       console.log(e);
+      wx.hideLoading();
     });
   },
   clearRecord() {
