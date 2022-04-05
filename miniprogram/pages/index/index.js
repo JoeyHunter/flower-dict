@@ -4,6 +4,7 @@ const { envList } = require('../../envList.js');
 
 Page({
   data: {
+    msg: [{title:'hello'}],
     showUploadTip: false,
     powerList: [{
       title: '云函数',
@@ -60,7 +61,7 @@ Page({
     }],
     envList,
     selectedEnv: envList[0],
-    haveCreateCollection: false
+    haveCreateCollection: false,
   },
 
   onClickPowerInfo(e) {

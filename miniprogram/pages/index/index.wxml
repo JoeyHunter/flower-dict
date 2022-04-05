@@ -1,18 +1,28 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="contianer hiden">
-  <p>Hello World</p>
+  <view class="box_text" wx:if="{{!record}}">花卉数据将展示在这里</view>
+  <view wx:if="{{record}}" class="code_box">
+    <view class="code_box_title">花卉数据库</view>
+    <view class="code_box_record">
+      <view class="code_box_record_title">科名</view>
+      <view class="code_box_record_title">属名</view>
+      <view class="code_box_record_title">花语</view>
+    </view>
+    <view class="line"></view>
+    <view class="code_box_record" wx:for="{{record}}" wx:key="_id">
+      <view class="code_box_record_detail">{{item.family}}</view>
+      <view class="code_box_record_detail">{{item.genus}}</view>
+      <view class="code_box_record_detail">{{item.flower_language}}</view>
+    </view>
+  </view>
+  <view class="button" bindtap="getRecord" wx:if="{{!haveGetRecord}}">查询记录</view>
+  <view class="button_clear" bindtap="clearRecord" wx:if="{{haveGetRecord}}">清空</view>
 </view>
-
-
-
 
 <!-- 默认内容 -->
 <view class="container">
-
-  <view class="title">快速了解云开发</view>
-
+  <view class="title">快速了解云开发{{msg[0].title}}</view>
   <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
-
   <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
     <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
       <view class="power_info_text">
@@ -32,9 +42,6 @@
       </view>
     </view>
   </view>
-
   <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
-
   <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
-
 </view>

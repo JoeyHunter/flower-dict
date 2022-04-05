@@ -1,19 +1,19 @@
-.tip {
-  font-size: 23rpx;
-  color: rgba(0, 0, 0, 0.5);
-  width: 90%;
-  text-align: center;
-  margin: 30rpx auto 0 auto;
+/**index.wxss**/
+
+page {
+  padding-top: 54rpx;
+  background-color: #f6f6f6;
+  padding-bottom: 60rpx;
 }
 
-.top_tip {
-  font-size: 28rpx;
-  color: rgba(0, 0, 0, 0.5);
-  width: 90%;
-  text-align: left;
-  margin-top: 30rpx;
-  margin-left: 20rpx;
+.title {
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #000000;
+  font-size: 44rpx;
+  margin-bottom: 40rpx;
 }
+
 
 .box_text {
   background-color: white;

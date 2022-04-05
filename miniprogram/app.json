@@ -33,7 +33,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/selectRecord/index",
         "iconPath": "images/nav/会员.png",
         "selectedIconPath": "images/nav/会员-on.png",
         "text": "我"
