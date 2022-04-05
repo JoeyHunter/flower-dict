@@ -9,6 +9,8 @@ Page({
     this.setData({
       id: options.id
     });
+    this.getDetail();
+    console.log('Detail 页面加载完毕');
   },
   jumpPage(e) {
     wx.navigateTo({
@@ -35,11 +37,5 @@ Page({
       console.log(e);
       wx.hideLoading();
     })
-  },
-  clearRecord() {
-    this.setData({
-      haveGetRecord: false,
-      record: ''
-    });
   }
 });
