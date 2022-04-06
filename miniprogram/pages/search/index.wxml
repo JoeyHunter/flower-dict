@@ -3,7 +3,7 @@
   <mp-searchbar ext-class="searchbar"></mp-searchbar>
   <view class="nav-area">
     <van-tabs active="{{ active }}" bind:change="onChange" custom-class="tabs-wrap" nav-class="tabs" tab-class="tab" color="#275b5a">
-      <van-tab title="{{tabTitle[0]}}" class="flex-item">
+      <van-tab title="{{tabTitle[0]}}">
         <view class="content">
           <view wx:if="{{!record}}">尚未取得数据</view>
           <mp-cells>
@@ -16,9 +16,9 @@
           </mp-cells>
         </view>
       </van-tab>
-      <van-tab title="{{tabTitle[1]}}" class="flex-item">内容 2</van-tab>
-      <van-tab title="{{tabTitle[2]}}" class="flex-item">内容 3</van-tab>
-      <van-tab title="{{tabTitle[3]}}" class="flex-item">内容 4</van-tab>
+      <van-tab title="{{tabTitle[1]}}">内容 2</van-tab>
+      <van-tab title="{{tabTitle[2]}}">内容 3</van-tab>
+      <van-tab title="{{tabTitle[3]}}">内容 4</van-tab>
     </van-tabs>
   </view>
 </view>

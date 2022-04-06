@@ -1,6 +1,10 @@
 /**app.wxss**/
 @import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
 
+:root {
+  --color-primary: #275b5a;
+}
+
 .container {
   display: flex;
   flex-direction: column;
