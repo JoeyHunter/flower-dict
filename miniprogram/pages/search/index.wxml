@@ -1,20 +1,24 @@
 <view class="contianer">
   <p class="hiden">search page</p>
+  <mp-searchbar ext-class="searchbar"></mp-searchbar>
   <view class="nav-area">
-    <mp-searchbar ext-class="searchbar"></mp-searchbar>
-    <view class="flex-wrp">
-      <view class="flex-item"><a>蔷薇科</a></view>
-      <view class="flex-item">百合科</view>
-      <view class="flex-item">其它</view>
-    </view>
+    <van-tabs active="{{ active }}" bind:change="onChange" custom-class="tabs-wrap" nav-class="tabs" tab-class="tab" color="#275b5a">
+      <van-tab title="{{tabTitle[0]}}" class="flex-item">
+        <view class="content">
+          <view wx:if="{{!record}}">尚未取得数据</view>
+          <mp-cells>
+            <view wx:if="{{showRecord}}" wx:for="{{record}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+              <mp-cell link="true">
+                <view>{{item.name}}</view>
+                <view slot="footer">{{item.family}}</view>
+              </mp-cell>
+            </view>
+          </mp-cells>
+        </view>
+      </van-tab>
+      <van-tab title="{{tabTitle[1]}}" class="flex-item">内容 2</van-tab>
+      <van-tab title="{{tabTitle[2]}}" class="flex-item">内容 3</van-tab>
+      <van-tab title="{{tabTitle[3]}}" class="flex-item">内容 4</van-tab>
+    </van-tabs>
   </view>
-  <view wx:if="{{!record}}">尚未取得数据</view>
-  <mp-cells>
-    <view wx:if="{{showRecord}}" wx:for="{{record}}" wx:for-item="item" wx:key="_id">
-      <mp-cell link="true">
-        <view>{{item.name}}</view>
-        <view slot="footer">{{item.family}}</view>
-      </mp-cell>
-    </view>
-  </mp-cells>
 </view>

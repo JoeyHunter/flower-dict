@@ -36,9 +36,9 @@
       },
       {
         "pagePath": "pages/search/index",
-        "iconPath": "images/nav/论坛.png",
-        "selectedIconPath": "images/nav/论坛-on.png",
-        "text": "论坛"
+        "iconPath": "images/nav/表单.png",
+        "selectedIconPath": "images/nav/表单-on.png",
+        "text": "总录"
       },
       {
         "pagePath": "pages/selectRecord/index",

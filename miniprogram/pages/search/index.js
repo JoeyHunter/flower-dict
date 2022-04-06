@@ -3,11 +3,13 @@ Page({
     haveGetRecord: false,
     showRecord: true,
     record: '',
-    powerList: [{
-      title: '数据库',
-      tip: 'flower data',
-      showRecord: false
-    }],
+    tabTitle: [
+      '全部',
+      '蔷薇科',
+      '百合科',
+      '其它',
+    ],
+    active: 0
   },
   onLoad(options) {
     console.log('加载 Search 页面...');
@@ -15,23 +17,19 @@ Page({
       this.getRecord();
     }
   },
-  onClickPowerInfo(e) {
-    const index = e.currentTarget.dataset.index;
-    const powerList = this.data.powerList;
-    powerList[index].showItem = !powerList[index].showItem;
-    if (powerList[index].title === '数据库' && !this.data.haveGetRecord) {
-      this.getRecord();
-    } else {
-      this.setData({
-        powerList
-      });
-    }
-  },
   jumpPage(e) {
-    // console.log(e);
     wx.navigateTo({
       url: `/pages/${e.currentTarget.dataset.page}/index?id=${e.currentTarget.dataset.id}`,
     });
+  },
+  onChange(event) {
+    wx.showToast({
+      title: `切换到标签 ${event.detail.name}`,
+      icon: 'none',
+    });
+  },
+  onClickInfo(event) {
+    this.jumpPage(event);
   },
   getRecord() {
     wx.showLoading({

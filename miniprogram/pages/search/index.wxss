@@ -10,7 +10,7 @@ page {
   margin-bottom: 10rpx;
 }
 
-.nav-area .searchbar {
+.searchbar {
   background-color: #f6f6f6;
 }
 
@@ -19,19 +19,22 @@ page {
 }
 
 .nav-area .flex-wrp .flex-item {
-  cursor: pointer;
+  /* cursor: pointer; */
   flex:1;text-align:center;margin-top:20rpx;
 }
 
-.nav-area .flex-wrp .flex-item:hover {
-  text-decoration: solid;
+.tabs-wrap{
+  width: 100vw;
 }
 
-.nav-area .flex-wrp .flex-item:active {
-  font-weight: bold;
+.tabs{
+  /* display:flex; 
+  flex-direction:row; */
+  background-color: #f6f6f6;
+  width: 100%;
 }
 
-.nav-area .flex-wrp .flex-item:visited {
-  color: greenyellow;
+.tab {
+  /* flex:1;
+  font-weight: bold; */
 }
-
