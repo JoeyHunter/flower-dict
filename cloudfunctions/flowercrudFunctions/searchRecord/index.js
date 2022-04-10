@@ -9,10 +9,19 @@ exports.main = async (event, context) => {
   // key
   switch (event.key) {
     case 'id':
-      return await db.collection('flowers').doc(event.id).get();
+      console.log('searchRecord:',event.id);
+      return await db.collection('flowers').where({
+        id: event.id
+      }).get();
     case 'family':
-      return await db.collection('flowers').doc(event.family).get();
+      console.log('searchRecord:', event.family);
+      return await db.collection('flowers').where({
+        family: event.family
+      }).get();
     case 'genus':
-      return await db.collection('flowers').doc(event.genus).get();
+      console.log('searchRecord:', event.genus);
+      return await db.collection('flowers').where({
+        genus: event.genus
+      }).get();
   }
 };

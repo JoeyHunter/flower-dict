@@ -5,9 +5,9 @@
     <van-tabs active="{{ active }}" bind:change="onChange" custom-class="tabs-wrap" nav-class="tabs" tab-class="tab" color="#275b5a">
       <van-tab title="{{tabTitle[0]}}">
         <view class="content">
-          <view wx:if="{{!record}}">尚未取得数据</view>
+          <view wx:if="{{!records[0]}}">尚未取得数据</view>
           <mp-cells>
-            <view wx:if="{{showRecord}}" wx:for="{{record}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+            <view wx:if="{{showRecord}}" wx:for="{{records[0]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
               <mp-cell link="true">
                 <view>{{item.name}}</view>
                 <view slot="footer">{{item.family}}</view>
@@ -16,9 +16,39 @@
           </mp-cells>
         </view>
       </van-tab>
-      <van-tab title="{{tabTitle[1]}}">内容 2</van-tab>
-      <van-tab title="{{tabTitle[2]}}">内容 3</van-tab>
-      <van-tab title="{{tabTitle[3]}}">内容 4</van-tab>
+      <van-tab title="{{tabTitle[1]}}">
+        <view wx:if="{{!records[1]}}">尚未取得数据</view>
+        <mp-cells>
+          <view wx:if="{{showRecord}}" wx:for="{{records[1]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+            <mp-cell link="true">
+              <view>{{item.name}}</view>
+              <view slot="footer">{{item.family}}</view>
+            </mp-cell>
+          </view>
+        </mp-cells>
+      </van-tab>
+      <van-tab title="{{tabTitle[2]}}">
+        <view wx:if="{{!records[2]}}">尚未取得数据</view>
+        <mp-cells>
+          <view wx:if="{{showRecord}}" wx:for="{{records[2]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+            <mp-cell link="true">
+              <view>{{item.name}}</view>
+              <view slot="footer">{{item.family}}</view>
+            </mp-cell>
+          </view>
+        </mp-cells>
+      </van-tab>
+      <van-tab title="{{tabTitle[3]}}">
+        <view wx:if="{{!records[3]}}">尚未取得数据</view>
+        <mp-cells>
+          <view wx:if="{{showRecord}}" wx:for="{{records[3]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+            <mp-cell link="true">
+              <view>{{item.name}}</view>
+              <view slot="footer">{{item.family}}</view>
+            </mp-cell>
+          </view>
+        </mp-cells>
+      </van-tab>
     </van-tabs>
   </view>
 </view>

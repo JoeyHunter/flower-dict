@@ -2,7 +2,7 @@ Page({
   data: {
     haveGetRecord: false,
     showRecord: true,
-    record: '',
+    records: [''],
     tabTitle: [
       '全部',
       '蔷薇科',
@@ -13,8 +13,9 @@ Page({
   },
   onLoad(options) {
     console.log('加载 Search 页面...');
-    if (!this.data.haveGetRecord){
-      this.getRecord();
+    if (!this.data.haveGetRecord) {
+      this.getAllRecord();
+      // this.getTabRecord();
     }
   },
   jumpPage(e) {
@@ -23,18 +24,18 @@ Page({
     });
   },
   onChange(event) {
-    console.log(event.detail);
-    wx.showToast({
-      title: `${event.detail.title}`,
-      icon: 'none',
-    });
+    console.log('onChange',event.detail.title);
+    // wx.showToast({
+    //   title: `${event.detail.title}`,
+    //   icon: 'none',
+    // });
   },
   onClickInfo(event) {
     this.jumpPage(event);
   },
-  getRecord() {
+  getAllRecord() {
     wx.showLoading({
-      title:'Loading...'
+      title: 'Loading...'
     });
     wx.cloud.callFunction({
       name: 'flowercrudFunctions',
@@ -44,18 +45,46 @@ Page({
     }).then((resp) => {
       this.setData({
         haveGetRecord: true,
-        record: resp.result.data
-      });
+        'records[0]': resp.result.data
+      })
+      this.getTabRecord();
       wx.hideLoading();
     }).catch((e) => {
       console.log(e);
       wx.hideLoading();
     });
   },
+  getTabRecord() {
+    var that = this;
+    var records = that.data.records;
+    console.log('getting record from records...');
+    if (records[0]) {
+      var tabs = that.data.tabTitle;
+      tabs.forEach(tab => {
+        switch(tab){
+          case '全部':
+            break;
+          case '其它':
+            var result = records[0].filter(record => record.family != tabs[1] && record.family!= tabs[2]);
+            records.push(result);
+          default:
+            var result = records[0].filter(record => record.family == tab);
+            records.push(result);
+        }
+      });
+      console.log(records);
+      this.setData({
+        records: records
+      });
+      console.log('getTabRecord: 加载数据成功');
+    }else{
+      console.log('getTabRecord: 加载数据失败');
+    }
+  },
   clearRecord() {
     this.setData({
       haveGetRecord: false,
-      record: ''
+      records: ['']
     });
   }
 });
