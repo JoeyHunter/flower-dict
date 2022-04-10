@@ -12,7 +12,7 @@ Page({
     active: 0
   },
   onLoad(options) {
-    console.log('加载 Search 页面...');
+    console.log('onLoad: Search Page');
     if (!this.data.haveGetRecord) {
       this.getAllRecord();
       // this.getTabRecord();
@@ -24,7 +24,7 @@ Page({
     });
   },
   onChange(event) {
-    console.log('onChange',event.detail.title);
+    console.log('onChange:',event.detail.title);
     // wx.showToast({
     //   title: `${event.detail.title}`,
     //   icon: 'none',
@@ -57,7 +57,6 @@ Page({
   getTabRecord() {
     var that = this;
     var records = that.data.records;
-    console.log('getting record from records...');
     if (records[0]) {
       var tabs = that.data.tabTitle;
       tabs.forEach(tab => {
@@ -72,7 +71,6 @@ Page({
             records.push(result);
         }
       });
-      console.log(records);
       this.setData({
         records: records
       });
