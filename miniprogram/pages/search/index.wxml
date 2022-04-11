@@ -1,6 +1,6 @@
 <view class="contianer">
   <p class="hiden">search page</p>
-  <mp-searchbar ext-class="searchbar"></mp-searchbar>
+  <mp-searchbar ext-class="searchbar" placeholder="请输入搜索内容" bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
   <view class="nav-area">
     <van-tabs active="{{ active }}" bind:change="onChange" custom-class="tabs-wrap" nav-class="tabs" tab-class="tab" color="#275b5a">
       <van-tab title="{{tabTitle[0]}}">
