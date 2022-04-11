@@ -33,12 +33,21 @@ Page({
     })
   },
   selectResult(e) {
-    console.log('select result', e.detail)
+    this.jumpPage(e);
   },
   jumpPage(e) {
-    wx.navigateTo({
-      url: `/pages/${e.currentTarget.dataset.page}/index?id=${e.currentTarget.dataset.id}`,
-    });
+    if (e.currentTarget.dataset.page){
+      wx.navigateTo({
+        url: `/pages/${e.currentTarget.dataset.page}/index?id=${e.currentTarget.dataset.id}`,
+      });
+    }else if(e.detail.item.page){
+      wx.navigateTo({
+        url: `/pages/${e.detail.item.page}/index?id=${e.detail.item.id}`,
+      });
+    }else {
+      console.log(e);
+    }
+    
   },
   onChange(event) {
     console.log('onChange:', event.detail.title);
@@ -108,7 +117,7 @@ Page({
       var fullResults = records[0].filter(record => record.family.includes(searchValue) || record.genus.includes(searchValue) || record.name.includes(searchValue) || record.flower_language.includes(searchValue));
       // var result = [{ text: '搜索结果1', value: 1 }];
       for (let i = 0; i < fullResults.length; i++) {
-        const result = { text: fullResults[i].name, value: i };
+        const result = { text: fullResults[i].name, value: i , id: fullResults[i]._id, page:'detail'};
         console.log(result);
         results.push(result);
       }

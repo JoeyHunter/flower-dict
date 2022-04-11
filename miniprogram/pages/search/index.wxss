@@ -38,3 +38,10 @@ page {
   /* flex:1;
   font-weight: bold; */
 }
+
+
+/* #searchresult {
+  margin: 0;
+  font-size: 10rpx;
+  color: red;
+} */
