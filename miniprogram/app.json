@@ -22,32 +22,6 @@
     "navigationBarTitleText": "花蕊词典",
     "navigationBarTextStyle": "black"
   },
-  "tabBar": {
-    "color": "#6e6d6b",
-    "selectedColor": "#275b5a",
-    "borderStyle": "white",
-    "backgroundColor": "#fff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/nav/首页.png",
-        "selectedIconPath": "images/nav/首页-on.png",
-        "text": ""
-      },
-      {
-        "pagePath": "pages/search/index",
-        "iconPath": "images/nav/词典.png",
-        "selectedIconPath": "images/nav/词典-on.png",
-        "text": ""
-      },
-      {
-        "pagePath": "pages/selectRecord/index",
-        "iconPath": "images/nav/表单.png",
-        "selectedIconPath": "images/nav/表单-on.png",
-        "text": ""
-      }
-    ]
-  },
   "sitemapLocation": "sitemap.json",
   "lazyCodeLoading": "requiredComponents"
 }

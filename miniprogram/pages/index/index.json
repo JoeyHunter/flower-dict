@@ -1,5 +1,10 @@
 {
   "usingComponents": {
-    "cloud-tip-modal": "/components/cloudTipModal/index"
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-search": "@vant/weapp/search/index"
   }
 }

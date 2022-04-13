@@ -1,27 +1,54 @@
-<!-- index.wxml -->
-<!-- 默认内容 -->
-<view class="container">
-  <view class="title">快速了解云开发{{msg[0].title}}</view>
-  <view class="top_tip">免鉴权接口调用 免部署后台 高并发</view>
-  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
-    <view class="power_info" data-index="{{index}}" bindtap="onClickPowerInfo">
-      <view class="power_info_text">
-        <view class="power_info_text_title">{{power.title}}</view>
-        <view class="power_info_text_tip">{{power.tip}}</view>
-      </view>
-      <image wx:if="{{!power.showItem}}" class="power_info_more" src="../../images/arrow.svg"></image>
-      <image wx:if="{{power.showItem}}" class="power_info_less" src="../../images/arrow.svg"></image>
-    </view>
-    <view wx:if="{{power.showItem}}">
-      <view wx:key="title" wx:for="{{power.item}}">
-        <view class="line"></view>
-        <view class="power_item" bindtap="jumpPage" data-page="{{item.page}}">
-          <view class="power_item_title">{{item.title}}</view>
-          <image class="power_item_icon" src="../../images/arrow.svg"></image>
+<view class="contianer">
+  <p class="hiden">search page</p>
+  <mp-searchbar ext-class="searchbar" placeholder="请输入搜索内容" bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+  <view class="nav-area">
+    <van-tabs active="{{ active }}" bind:change="onChange" custom-class="tabs-wrap" nav-class="tabs" tab-class="tab" color="#275b5a">
+      <van-tab title="{{tabTitle[0]}}">
+        <view class="content">
+          <view wx:if="{{!records[0]}}">尚未取得数据</view>
+          <mp-cells>
+            <view wx:if="{{showRecord}}" wx:for="{{records[0]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+              <mp-cell link="true">
+                <view>{{item.name}}</view>
+                <view slot="footer">{{item.family}}</view>
+              </mp-cell>
+            </view>
+          </mp-cells>
         </view>
-      </view>
-    </view>
+      </van-tab>
+      <van-tab title="{{tabTitle[1]}}">
+        <view wx:if="{{!records[1]}}">尚未取得数据</view>
+        <mp-cells>
+          <view wx:if="{{showRecord}}" wx:for="{{records[1]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+            <mp-cell link="true">
+              <view>{{item.name}}</view>
+              <view slot="footer">{{item.family}}</view>
+            </mp-cell>
+          </view>
+        </mp-cells>
+      </van-tab>
+      <van-tab title="{{tabTitle[2]}}">
+        <view wx:if="{{!records[2]}}">尚未取得数据</view>
+        <mp-cells>
+          <view wx:if="{{showRecord}}" wx:for="{{records[2]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+            <mp-cell link="true">
+              <view>{{item.name}}</view>
+              <view slot="footer">{{item.family}}</view>
+            </mp-cell>
+          </view>
+        </mp-cells>
+      </van-tab>
+      <van-tab title="{{tabTitle[3]}}">
+        <view wx:if="{{!records[3]}}">尚未取得数据</view>
+        <mp-cells>
+          <view wx:if="{{showRecord}}" wx:for="{{records[3]}}" wx:for-item="item" wx:key="_id" data-id="{{item._id}}" data-page="detail" bindtap="onClickInfo">
+            <mp-cell link="true">
+              <view>{{item.name}}</view>
+              <view slot="footer">{{item.family}}</view>
+            </mp-cell>
+          </view>
+        </mp-cells>
+      </van-tab>
+    </van-tabs>
   </view>
-  <view class="environment" bindtap="onChangeShowEnvChoose">当前环境 {{ selectedEnv.alias }}</view>
-  <cloud-tip-modal showUploadTipProps="{{showUploadTip}}"></cloud-tip-modal>
 </view>

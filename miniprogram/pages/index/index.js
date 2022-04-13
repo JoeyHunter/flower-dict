@@ -1,143 +1,137 @@
-// index.js
-// const app = getApp()
-const { envList } = require('../../envList.js');
-
 Page({
   data: {
-    msg: [{title:'hello'}],
-    showUploadTip: false,
-    powerList: [{
-      title: '云函数',
-      tip: '安全、免鉴权运行业务代码',
-      showItem: false,
-      item: [{
-        title: '获取OpenId',
-        page: 'getOpenId'
-      },
-      //  {
-      //   title: '微信支付'
-      // },
-       {
-        title: '生成小程序码',
-        page: 'getMiniProgramCode'
-      },
-      // {
-      //   title: '发送订阅消息',
-      // }
-    ]
-    }, {
-      title: '数据库',
-      tip: '安全稳定的文档型数据库',
-      showItem: false,
-      item: [{
-        title: '创建集合',
-        page: 'createCollection'
-      }, {
-        title: '更新记录',
-        page: 'updateRecord'
-      }, {
-        title: '查询记录',
-        page: 'selectRecord'
-      }, {
-        title: '聚合操作',
-        page: 'sumRecord'
-      }]
-    }, {
-      title: '云存储',
-      tip: '自带CDN加速文件存储',
-      showItem: false,
-      item: [{
-        title: '上传文件',
-        page: 'uploadFile'
-      }]
-    }, {
-      title: '云托管',
-      tip: '不限语言的全托管容器服务',
-      showItem: false,
-      item: [{
-        title: '部署服务',
-        page: 'deployService'
-      }]
-    }],
-    envList,
-    selectedEnv: envList[0],
-    haveCreateCollection: false,
+    haveGetRecord: false,
+    showRecord: true,
+    records: [''],
+    tabTitle: [
+      '全部',
+      '蔷薇科',
+      '百合科',
+      '其它',
+    ],
+    active: 0,
+    inputVal: ''
   },
-
-  onClickPowerInfo(e) {
-    const index = e.currentTarget.dataset.index;
-    const powerList = this.data.powerList;
-    powerList[index].showItem = !powerList[index].showItem;
-    if (powerList[index].title === '数据库' && !this.data.haveCreateCollection) {
-      this.onClickDatabase(powerList);
-    } else {
-      this.setData({
-        powerList
-      });
+  onLoad(options) {
+    console.log('onLoad: Search Page');
+    if (!this.data.haveGetRecord) {
+      this.getAllRecord();
+      // this.getTabRecord();
     }
-  },
-
-  onChangeShowEnvChoose() {
-    wx.showActionSheet({
-      itemList: this.data.envList.map(i => i.alias),
-      success: (res) => {
-        this.onChangeSelectedEnv(res.tapIndex);
-      },
-      fail (res) {
-        console.log(res.errMsg);
-      }
-    });
-  },
-
-  onChangeSelectedEnv(index) {
-    if (this.data.selectedEnv.envId === this.data.envList[index].envId) {
-      return;
-    }
-    const powerList = this.data.powerList;
-    powerList.forEach(i => {
-      i.showItem = false;
-    });
     this.setData({
-      selectedEnv: this.data.envList[index],
-      powerList,
-      haveCreateCollection: false
+      search: this.search.bind(this)
     });
   },
-
+  search(value) {
+    console.log(value);
+    // var result = [{ text: '搜索结果1', value: 1 }];
+    var result = this.getSearchRecord(value);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(result)
+      }, 200)
+    })
+  },
+  selectResult(e) {
+    this.jumpPage(e);
+  },
   jumpPage(e) {
-    wx.navigateTo({
-      url: `/pages/${e.currentTarget.dataset.page}/index?envId=${this.data.selectedEnv.envId}`,
-    });
-  },
+    if (e.currentTarget.dataset.page) {
+      wx.navigateTo({
+        url: `/pages/${e.currentTarget.dataset.page}/index?id=${e.currentTarget.dataset.id}`,
+      });
+    } else if (e.detail.item.page) {
+      wx.navigateTo({
+        url: `/pages/${e.detail.item.page}/index?id=${e.detail.item.id}`,
+      });
+    } else {
+      console.log(e);
+    }
 
-  onClickDatabase(powerList) {
+  },
+  onChange(event) {
+    console.log('onChange:', event.detail.title);
+  },
+  onClickInfo(event) {
+    this.jumpPage(event);
+  },
+  onSearch() {
+    var that = this;
+    console.log('搜索' + that.data.value);
+  },
+  onCancel() {
+    var that = this;
+    console.log('搜索' + that.data.value);
+  },
+  getAllRecord() {
     wx.showLoading({
-      title: '',
+      title: 'Loading...'
     });
     wx.cloud.callFunction({
-      name: 'quickstartFunctions',
-      config: {
-        env: this.data.selectedEnv.envId
-      },
+      name: 'flowercrudFunctions',
       data: {
-        type: 'createCollection'
+        type: 'getCollection'
       }
     }).then((resp) => {
-      if (resp.result.success) {
-        this.setData({
-          haveCreateCollection: true
-        });
-      }
       this.setData({
-        powerList
-      });
+        haveGetRecord: true,
+        'records[0]': resp.result.data
+      })
+      this.getTabRecord();
       wx.hideLoading();
     }).catch((e) => {
       console.log(e);
-      this.setData({
-        showUploadTip: true
-      });
       wx.hideLoading();
+    });
+  },
+  getTabRecord() {
+    var that = this;
+    var records = that.data.records;
+    if (records[0]) {
+      var tabs = that.data.tabTitle;
+      tabs.forEach(tab => {
+        switch (tab) {
+          case '全部':
+            break;
+          case '其它':
+            var result = records[0].filter(record => record.family != tabs[1] && record.family != tabs[2]);
+            records.push(result);
+          default:
+            var result = records[0].filter(record => record.family == tab);
+            records.push(result);
+        }
+      });
+      this.setData({
+        records: records
+      });
+      console.log('getTabRecord: 加载数据成功');
+    } else {
+      console.log('getTabRecord: 加载数据失败');
+    }
+  },
+  getSearchRecord(searchValue) {
+    var that = this;
+    var records = that.data.records;
+    var results = [];
+    if (records[0]) {
+      var fullResults = records[0].filter(record => record.family.includes(searchValue) || record.genus.includes(searchValue) || record.name.includes(searchValue) || record.flower_language.includes(searchValue));
+      // var result = [{ text: '搜索结果1', value: 1 }];
+      for (let i = 0; i < fullResults.length; i++) {
+        const result = { text: fullResults[i].name, value: i, id: fullResults[i]._id, page: 'detail' };
+        console.log(result);
+        results.push(result);
+      }
+      console.log('getSearchRecord: 搜索数据成功');
+    } else {
+      console.log('getSearchRecord: 搜索数据失败');
+    }
+    console.log(results);
+    return results;
+  },
+  clearRecord() {
+    this.setData({
+      haveGetRecord: false,
+      records: ['']
     });
   }
 });
